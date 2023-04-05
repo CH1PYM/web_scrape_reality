@@ -16,5 +16,6 @@ Scrape the first 500 items (title, image url) from sreality.cz (flats, sell - yo
 * On the backend, two ways to scrape information about flats from the sreality have been created. The first way downloads and retrieves data from their API. And the second one retrieves information by scraping the page using tool puppeteer. In the project I use the first way through fetch api.
 * The whole BE runs on the express server. I chose it because of easy configuration for such a small project.
 # RUN 
-* git clone
+* git clone https://github.com/CH1PYM/web_srape_reality.git
 * docker-compose up -d
+* visit http://127.0.0.1:8080
