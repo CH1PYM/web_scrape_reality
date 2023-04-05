@@ -17,3 +17,4 @@ Scrape the first 500 items (title, image url) from sreality.cz (flats, sell - yo
 * The whole BE runs on the express server. I chose it because of easy configuration for such a small project.
 # RUN 
 * git clone
+* docker-compose up -d
