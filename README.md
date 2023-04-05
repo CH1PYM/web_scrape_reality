@@ -19,3 +19,4 @@ Scrape the first 500 items (title, image url) from sreality.cz (flats, sell - yo
 * git clone https://github.com/CH1PYM/web_scrape_reality.git
 * docker-compose up -d
 * visit http://127.0.0.1:8080
+* if you can't see the data, refresh
