@@ -1,8 +1,21 @@
-FROM node:latest
-WORKDIR /app 
-COPY package.json . 
-RUN npm i 
-COPY . . 
+FROM node:18-alpine as builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm ci 
+
+RUN npm run build
+
+FROM nginx:alpine as production
+
+ENV NODE_ENV production
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 8080
-#RUN npm run build
-CMD ["npm", "run", "dev"] 
+
+CMD ["nginx", "-g", "daemon off;"]
